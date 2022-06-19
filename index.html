@@ -1,0 +1,416 @@
+<html>
+	<!-- </marquee><div align="center"><font face="Arial, Helvetica, sans-serif"> <font color="#FFFFFF" size="+1"><marquee bgcolor="#000000" direction="right" loop="20">JAVA  SCRIPT- BARRERA  ANTONIO  YANELLI</marquee></font></div> -->
+	<head>
+		<title>Menu Desplegable</title>
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			.header {
+				margin:10px auto;
+				width:100%;
+				font-family:Arial, Helvetica, sans-serif;
+				height: 50px;
+			}
+
+			.contenido{
+				text-align: center;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<ul class="nav">
+				<li><a href="">4SM3</a></li>
+
+				<!-- CONDICIONALES --> 
+			 	<li><a href="">Condicionales</a>
+					<ul>
+						<li><a href="#" onclick="condicionales(1)"> Puedes votar</a></li>
+						<li><a href="#"onclick="condicionales(2)">Mayor de 3 números</a></li>
+						<li><a href="#" onclick="condicionales(3)">ejemplo de switch</a></li>
+				
+					</ul>
+				</li>
+<!-- CONDICIONALES -->
+
+
+
+<!-- CICLOS -->
+				<li><a href="">Ciclos</a>
+					<ul>
+						<li><a href="#" onclick="Ciclos(1)" >Pares del 1-100 for</a></li>
+						<li><a href="#" onclick="Ciclos(2)" >Sumatorio al 100 for</a></li>
+						<li><a href="#" onclick="Ciclos(3)">Pares del 1-100 while</a></li>
+						<li><a href="#" onclick="Ciclos(4)">Sumatorio al 100 while</a></li>
+						<li><a href="#" onclick="Ciclos(5)">Pares del 1-100 do while</a></li>
+						<li><a href="#" onclick="Ciclos(6)">Sumatorio al 100 do while</a></li>
+					</ul>
+				</li>  <!-- CICLOS -->
+				<li><a href="">Algoritmos de ordenación (Arreglos )</a>
+				
+				<ul>
+					<li><a href="#"onclick="ordenar(1)">Bubble sort</a></li>
+					<li><a href="#" onclick="ordenar(2)">Insertion sort</a></li>
+					<li><a href="#" onclick="ordenar(3)">Selection sort</a></li>
+				</ul>
+				</li>
+				 <li><a href="">Operaciones base</a>
+				
+				<ul>
+						<li><a href="#" onclick="operaciones(1)">Pares - impares</a></li>
+						<li><a href="#" onclick="operaciones(2)">Tablas de multiplicar</a></li>
+						<li><a href="#" onclick="operaciones(3)">Producto sumas</a></li>
+						<li><a href="#" onclick="operaciones(4)">Número mayor en arreglo</a></li>
+						<li><a href="#" onclick="operaciones(5)">suma de arreglos</a></li>
+						<li><a href="#" onclick="operaciones(6)">media aritmetica</a></li>
+						<li><a href="#" onclick="operaciones(7)">operaciones con textos </a></li>
+					</ul> 
+				</li>
+			</ul>
+		</div><br>
+		<div class="contenido">
+			<h1 id="titulo">Aqui va el titulo</h1><br>
+			<h3 id="contenido"
+			>Aqui va el contenido</h3>
+		</div>
+
+<script>
+function condicionales(a) {
+    if(a===1){
+        document.getElementById("titulo").innerHTML = "Puedes Votar";
+        let edad;
+        edad = prompt("Digite una edad: ");
+        if ((edad >= 18)&&(edad<=110)) {
+            document.getElementById("contenido").innerHTML = "Si puedes votar.";
+        }else{
+            document.getElementById("contenido").innerHTML = "No puedes votar.";
+        }
+    }
+    if(a===2){
+        document.getElementById("titulo").innerHTML = "Mayor de 3 Numeros";
+        let num1, num2, num3;
+        num1 = prompt("Digita el primer numero: ");
+        num2 = prompt("Digita el segundo numero: ");
+        num3 = prompt("Digita el tercer numero: ");
+        if (((num1>=num2)&&(num1>=num3))){
+            document.getElementById("contenido").innerHTML = "El mayor es el primer numero = " + num1;
+        }
+        if (((num2>=num3)&&(num2>=num1))){
+            document.getElementById("contenido").innerHTML = "El mayor es el segundo numero = " + num2;
+        }
+        if (((num3>=num1)&&(num3>=num2))){
+            document.getElementById("contenido").innerHTML = "El mayor es el tercer numero = " + num3;
+        }
+    }
+    if(a===3){
+        document.getElementById("titulo").innerHTML = "Ejemplo Switch";
+        let opcion;
+        opcion = prompt("Digita un numero de mes: ");
+        switch (opcion) {
+            case '1': document.getElementById("contenido").innerHTML = "El mes es Enero"; break;
+            case '2': document.getElementById("contenido").innerHTML = "El mes es Febrero"; break;
+            case '3': document.getElementById("contenido").innerHTML = "El mes es Marzo"; break;
+            case '4': document.getElementById("contenido").innerHTML = "El mes es Abril"; break;
+            case '5': document.getElementById("contenido").innerHTML = "El mes es Mayo"; break;
+            case '6': document.getElementById("contenido").innerHTML = "El mes es Junio"; break;
+            case '7': document.getElementById("contenido").innerHTML = "El mes es Julio"; break;
+            case '8': document.getElementById("contenido").innerHTML = "El mes es Agosto"; break;
+            case '9': document.getElementById("contenido").innerHTML = "El mes es Septiembre"; break;
+            case '10': document.getElementById("contenido").innerHTML = "El mes es Octubre"; break;
+            case '11': document.getElementById("contenido").innerHTML = "El mes es Noviembre"; break;
+            case '12': document.getElementById("contenido").innerHTML = "El mes es Diciembre"; break;
+            default: document.getElementById("contenido").innerHTML = "No existe ese numero de mes"; break;
+        }
+    }
+};
+function ciclos(a) {
+    if(a===1){
+        document.getElementById("titulo").innerHTML = "Pares 1-100 (FOR)";
+        let i=0;
+        let resultado='';
+        for(i=1;i<=100;i++){
+            if(i%2===0){
+                resultado = resultado + " " + i; 
+            }
+        }
+        document.getElementById("contenido").innerHTML = "Los numeros pares son: " +resultado;
+    }
+    if(a===2){
+        document.getElementById("titulo").innerHTML = "Sumatoria 100 (FOR)";
+        let i=0;
+        let resultado=0;
+        for(i=1;i<=100;i++){
+            resultado+=i;
+        }
+        document.getElementById("contenido").innerHTML = "La sumatoria de los primeros 100 numeros es: " +resultado;
+    }
+    if(a===3){
+        document.getElementById("titulo").innerHTML = "Pares 1-100 (WHILE)";
+        let i=1;
+        let resultado='';
+        while(i<=100){
+            if(i%2===0){
+                resultado = resultado + " " + i; 
+            }
+            i++;
+        }
+        document.getElementById("contenido").innerHTML = "Los numeros pares son: " +resultado;
+    }
+    if(a===4){
+        document.getElementById("titulo").innerHTML = "Sumatoria 100 (WHILE)";
+        let i=0;
+        let resultado=0;
+        while(i<=100){
+            resultado+=i; 
+            i++;
+        }
+        document.getElementById("contenido").innerHTML = "La sumatoria de los primeros 100 numeros es: " +resultado;
+    }
+    if(a===5){
+        document.getElementById("titulo").innerHTML = "Pares 1-100 (DO-WHILE)";
+        let i=1;
+        let resultado='';
+        do{
+            if(i%2===0){
+                resultado = resultado + " " + i; 
+            }
+            i++;
+        }while(i<=100);
+        document.getElementById("contenido").innerHTML = "Los numeros pares son: " +resultado;
+    }
+    if(a===6){
+        document.getElementById("titulo").innerHTML = "Sumatoria 100 (DO-WHILE)";
+        let i=0;
+        let resultado=0;
+        do{
+            resultado+=i; 
+            i++;
+        }while(i<=100);
+        document.getElementById("contenido").innerHTML = "La sumatoria de los primeros 100 numeros es: " +resultado;
+    }
+};
+
+function ordenar(a) {
+	if (a === 1) {
+		document.getElementById("titulo").innerHTML = "Bubble Sort";
+		let num1, num2, num3, num4, num5;
+		let lista;
+		let n = 5,
+			i,
+			k,
+			aux;
+		num1 = prompt("Digita el primer numero: ");
+		num2 = prompt("Digita el segundo numero: ");
+		num3 = prompt("Digita el tercer numero: ");
+		num4 = prompt("Digita el cuarto numero: ");
+		num5 = prompt("Digita el quinto numero: ");
+		lista = [num1, num2, num3, num4, num5];
+		// Algoritmo de burbuja
+		for (k = 1; k < n; k++) {
+			for (i = 0; i < n - k; i++) {
+				if (lista[i] > lista[i + 1]) {
+					aux = lista[i];
+					lista[i] = lista[i + 1];
+					lista[i + 1] = aux;
+				}
+			}
+		}
+		document.getElementById("contenido").innerHTML = "La lista ordenada es: " + lista;
+	}
+	if (a === 2) {
+		document.getElementById("titulo").innerHTML = "Insertion Sort";
+		let num1, num2, num3, num4, num5;
+		let lista;
+		let n = 5,
+			i,
+			k,
+			j,
+			aux;
+		num1 = prompt("Digita el primer numero: ");
+		num2 = prompt("Digita el segundo numero: ");
+		num3 = prompt("Digita el tercer numero: ");
+		num4 = prompt("Digita el cuarto numero: ");
+		num5 = prompt("Digita el quinto numero: ");
+		lista = [num1, num2, num3, num4, num5];
+		for (k = 1; k < n; k++) {
+			j = k;
+			aux = lista[k];
+			while (j > 0 && lista[j - 1] > aux) {
+				lista[j] = lista[j - 1];
+				j--;
+			}
+			lista[j] = aux;
+		}
+		document.getElementById("contenido").innerHTML = "La lista ordenada es: " + lista;
+	}
+	if (a === 3) {
+		document.getElementById("titulo").innerHTML = "Selection Sort";
+		let num1, num2, num3, num4, num5;
+		let lista;
+		let n = 5, i, j;
+		num1 = prompt("Digita el primer numero: ");
+		num2 = prompt("Digita el segundo numero: ");
+		num3 = prompt("Digita el tercer numero: ");
+		num4 = prompt("Digita el cuarto numero: ");
+		num5 = prompt("Digita el quinto numero: ");
+		lista = [num1, num2, num3, num4, num5];
+		for (j = 0; j < n; ++j) {
+			let i = (iMin = j);
+			for (++i; i < n; ++i) {
+				lista[i] < lista[iMin] && (iMin = i);
+			}
+			[lista[j], lista[iMin]] = [lista[iMin], lista[j]];
+		}
+		document.getElementById("contenido").innerHTML = "La lista ordenada es: " + lista;
+	}
+};
+
+function operaciones(a) {
+    if(a===1){
+        document.getElementById("titulo").innerHTML = "Pares - Impares";
+        let num;
+        num = prompt("Digite un numero: ");
+        if(num%2===0){
+            document.getElementById("contenido").innerHTML = "El numero "+num+" es par.";
+        }else{
+            document.getElementById("contenido").innerHTML = "El numero "+num+" es impar.";
+        }    
+    }
+    if(a===2){
+        document.getElementById("titulo").innerHTML = "Tablas de Multiplicar";
+        let num,i;
+        let t="",tabla="";
+        num = prompt("Digite el numero a conocer su tabla de verdad: ");
+        for(i=1;i<=10;i++){
+            t = i+" x "+num+" = "+(i*num)+"<br>";
+            tabla+=t;
+            t="";
+        }
+        document.getElementById("contenido").innerHTML = tabla; 
+    }
+    if(a===3){
+        document.getElementById("titulo").innerHTML = "Producto con sumas";
+        let a=0,b=0,c=0,d=0,e=0,f=0,resultado=0;
+        a = prompt("Se calculara (A+B)(C+D), digite el valor de A: ");
+        b = prompt("Se calculara (A+B)(C+D), digite el valor de B: ");
+        c = prompt("Se calculara (A+B)(C+D), digite el valor de C: ");
+        d = prompt("Se calculara (A+B)(C+D), digite el valor de D: ");
+        resultado = (parseFloat(a)+parseFloat(b))*(parseFloat(c)+parseFloat(d));
+        document.getElementById("contenido").innerHTML = "El resultado del producto de sumas es: "+resultado;
+    }
+    if(a===4){
+        document.getElementById("titulo").innerHTML = "Numero mayor en un arreglo";
+        let num1, num2, num3, num4, num5, mayor,i;
+		let lista;
+		num1 = prompt("(1/5) Digita el primer numero: ");
+		num2 = prompt("(2/5) Digita el segundo numero: ");
+		num3 = prompt("(3/5) Digita el tercer numero: ");
+		num4 = prompt("(4/5) Digita el cuarto numero: ");
+		num5 = prompt("(5/5) Digita el quinto numero: ");
+		lista = [num1, num2, num3, num4, num5];
+        mayor=lista[0];
+        for(i=0;i<5;i++){
+            if(mayor<=lista[i]){
+                mayor = lista[i];
+            }
+        }
+        document.getElementById("contenido").innerHTML = "El numero mayor del arreglo es: "+mayor;
+    }
+    if(a===5){
+        document.getElementById("titulo").innerHTML = "Suma de arreglos";
+        let num1, num2, num3, num4, num5;
+        let num6, num7, num8, num9, num10;
+		let lista, resultado="";
+		num1 = prompt("(1/5) Digita A[0]: ");
+		num2 = prompt("(2/5) Digita A[1]: ");
+		num3 = prompt("(3/5) Digita A[2]: ");
+		num4 = prompt("(4/5) Digita A[3]: ");
+		num5 = prompt("(5/5) Digita A[4]: ");
+        num6 = prompt("(1/5) Digita B[0]: ");
+		num7 = prompt("(2/5) Digita B[1]: ");
+		num8 = prompt("(3/5) Digita B[2]: ");
+		num9 = prompt("(4/5) Digita B[3]: ");
+		num10 = prompt("(5/5) Digita B[4]: ");
+		lista = [parseFloat(num1)+parseFloat(num6),parseFloat(num2)+parseFloat(num7),parseFloat(num3)+parseFloat(num8),parseFloat(num4)+parseFloat(num9),parseFloat(num5)+parseFloat(num10)];
+
+        for(i=0;i<5;i++){
+            resultado+=lista[i]+" ";
+        }
+        document.getElementById("contenido").innerHTML = "La suma de arreglos queda de la siguiente manera: "+resultado;
+    }
+    if(a===6){
+        document.getElementById("titulo").innerHTML = "Media Aritmetica";
+        let num1,num2,num3,num4,num5,total;
+		num1 = prompt("Digita el elemento (1/5) : ");
+		num2 = prompt("Digita el elemento (2/5) : ");
+		num3 = prompt("Digita el elemento (3/5) : ");
+		num4 = prompt("Digita el elemento (4/5) : ");
+		num5 = prompt("Digita el elemento (5/5) : ");
+		total = (parseFloat(num1)+parseFloat(num2)+parseFloat(num3)+parseFloat(num4)+parseFloat(num5))/5;
+        document.getElementById("contenido").innerHTML = "La media aritmetica de los 5 elementos es: "+total;
+    }
+    if(a===7){
+        document.getElementById("titulo").innerHTML = "Operacion de textos (Igualdad)";
+        let text1,text2;
+		text1 = prompt("Digita una cadena : ");
+		text2 = prompt("Digita otra cadena : ");
+        if(text1 === text2){
+            document.getElementById("contenido").innerHTML = "Las cadenas SI son exactamente iguales.";
+        }else{
+            document.getElementById("contenido").innerHTML = "las cadenas NO son exactamente iguales.";
+        }
+    }
+};
+
+
+
+</script>
+
+
+
+	</body>
+</html>
